@@ -3,6 +3,7 @@ FROM ghcr.io/openclaw/openclaw:latest
 EXPOSE 8080
 
 ENV PORT=8080
+ENV NODE_OPTIONS="--max-old-space-size=400"
 
 RUN node openclaw.mjs config set gateway.controlUi.allowInsecureAuth true
 RUN node openclaw.mjs config set gateway.controlUi.dangerouslyAllowHostHeaderOriginFallback true
