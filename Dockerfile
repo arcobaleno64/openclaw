@@ -7,6 +7,5 @@ ENV PORT=8080
 RUN node openclaw.mjs config set gateway.controlUi.allowInsecureAuth true
 RUN node openclaw.mjs config set gateway.controlUi.dangerouslyAllowHostHeaderOriginFallback true
 RUN node openclaw.mjs config set gateway.controlUi.dangerouslyDisableDeviceAuth true
-RUN node openclaw.mjs config set models.providers.google.apiKeyEnv GEMINI_API_KEY
 RUN node openclaw.mjs config set agents.defaults.model.primary "google/gemini-2.5-flash"
 CMD ["node", "openclaw.mjs", "gateway", "--allow-unconfigured", "--bind", "lan", "--port", "8080"]
